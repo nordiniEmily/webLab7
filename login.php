@@ -1,4 +1,5 @@
 <?php
+//start
 session_start();
 
 // Check if the user is already logged in
