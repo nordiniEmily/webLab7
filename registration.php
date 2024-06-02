@@ -1,10 +1,19 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    // Redirect to a different page if the user is already register
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Registration Form</title>
 </head>
 <body>
-    <form action="registration.php" method="post">
+<h2>Registration</h2>
+    <form action="userRegistration.php" method="post">
         <label for="matric">Matric:</label>
         <input type="text" id="matric" name="matric" required><br><br>
 
@@ -23,5 +32,6 @@
 
         <input type="submit" name="submit" value="Submit">
     </form>
+    <a href="login.php"><button type="button">Back to Login</button></a>
 </body>
 </html>
